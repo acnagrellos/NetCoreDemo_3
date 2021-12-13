@@ -1,0 +1,9 @@
+1. Actualiza el ejercicio anterior usando un Servicio de Tipo Singlenton.
+
+2. Inyección de dependencias.
+
+Crea un API que usando MapGet devuelva:
+
+* en la llamada __/equals__: dos números siempre iguales usando un servicio dos veces con la clase Random.
+* en la llamada __/different__: dos números siempre distintos usando diferentes un servicio dos veces con la clase Random.
+* en la llamada por defecto dos números siempre iguales solo por llamada usando un servicio dos veces con la clase Random.
