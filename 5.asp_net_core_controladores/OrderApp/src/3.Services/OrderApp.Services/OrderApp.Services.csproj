@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\OrderApp.Models\OrderApp.Models.csproj" />
     <ProjectReference Include="..\..\4.Domain\OrderApp.Domain\OrderApp.Domain.csproj" />
+    <ProjectReference Include="..\..\4.Domain\OrderApp.Models\OrderApp.Models.csproj" />
   </ItemGroup>
 
 </Project>

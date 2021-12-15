@@ -10,15 +10,6 @@ namespace OrderApp.Models
         public int Age { get; set; }
         public string Email { get; set; }
 
-        public void UpdateClient(Customer customer)
-        {
-            customer.Update(
-                this.Name,
-                this.Surname,
-                this.Age,
-                this.Email);
-        }
-
         public static CustomerResponse ToMapper(Customer customer)
         {
             return new CustomerResponse

@@ -6,6 +6,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\3.Services\OrderApp.Services\OrderApp.Services.csproj" />
+	  <ProjectReference Include="..\..\4.Domain\OrderApp.Models\OrderApp.Models.csproj" />
 	</ItemGroup>
 
 	<PropertyGroup>
