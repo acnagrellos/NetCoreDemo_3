@@ -14,8 +14,8 @@ namespace OrderApp.Domain
         public Product(int id, string name, string description, int price) 
         {
             this.Id = id;
-            this.Update(name, description, price);
             this.OutOfCatalog = false;
+            this.Update(name, description, price);
         }
         
         public void Update(string name, string description, int price) 

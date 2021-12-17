@@ -2,15 +2,10 @@
 using OrderApp.Domain.Exceptions;
 using OrderApp.Models.Products;
 using OrderApp.Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrderApp.Services.MemoryServices
 {
-    internal class ProductsMemoryService : IProductsService
+    public class ProductsMemoryService : IProductsService
     {
         private readonly List<Product> _products = new List<Product>();
         public async Task<int> Create(CreateProductRequest productRequest)
