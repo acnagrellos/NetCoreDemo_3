@@ -5,16 +5,21 @@ namespace FunctionalTest.Given
 {
     public partial class GivenFixture
     {
-        public async Task<int> a_customer() 
+        public async Task<int> a_customer(
+            string name = "Pepe",
+            string surname = "Lopez",
+            int age = 23,
+            string email = "email@email.com")
         {
-            var customer = new CreateCustomerRequest
+            var requestCustomer = new CreateCustomerRequest
             {
-                Name = "Name",
-                Surname = "Surname",
-                Age = _random.Next(18, 80),
-                Email = "email@email.com"
+                Name = name,
+                Surname = surname,
+                Age = age,
+                Email = email
             };
-            return await CustomerService.Create(customer);
+
+            return await CustomerService.Create(requestCustomer);
         }
 
         public async Task<int> a_customer_desactive()

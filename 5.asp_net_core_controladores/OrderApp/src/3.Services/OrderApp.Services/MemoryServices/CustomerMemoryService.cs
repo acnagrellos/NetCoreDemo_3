@@ -42,7 +42,7 @@ namespace OrderApp.Services.MemoryServices
             }
             else
             {
-                throw new NotFoundException("No se ha encontrado el cliente");
+                throw new NotFoundException("Ejemplo");
             }
         }
 

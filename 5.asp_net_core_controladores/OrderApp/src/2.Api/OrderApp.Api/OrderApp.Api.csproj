@@ -5,6 +5,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="6.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <ProjectReference Include="..\..\3.Services\OrderApp.Services\OrderApp.Services.csproj" />
 	  <ProjectReference Include="..\..\4.Domain\OrderApp.Models\OrderApp.Models.csproj" />
 	</ItemGroup>

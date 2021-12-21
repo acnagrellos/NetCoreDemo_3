@@ -22,6 +22,7 @@
         public int CreateStudent(int id, string name) 
         {
             var newStudent = new Student { Id = id, Name = name };
+            _students.Add(newStudent);
             return newStudent.Id;
         }
 

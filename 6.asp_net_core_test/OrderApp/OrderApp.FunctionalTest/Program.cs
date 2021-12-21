@@ -1,19 +1,16 @@
+﻿using Microsoft.AspNetCore.Builder;
 using OrderApp.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSwaggerGen()
-                .ConfigureServices();
+builder.Services.ConfigureServices();
 
 var app = builder.Build();
 
-
-app.UseSwagger()
-   .UseSwaggerUI();
-
-
-app.UseApiConfiguration()
+app.UseApi()
    .UseRouting()
    .UseEndpoints(endpoints => endpoints.MapApiEndpoints());
 
 app.Run();
+
+public partial class Program { }

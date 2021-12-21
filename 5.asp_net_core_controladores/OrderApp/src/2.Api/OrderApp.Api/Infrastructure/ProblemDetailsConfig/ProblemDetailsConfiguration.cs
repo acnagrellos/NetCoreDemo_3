@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderApp.Api.Infrastructure
+namespace OrderApp.Api.Infrastructure.ProblemDetailsConfig
 {
     public static class ProblemDetailsConfiguration
     {
@@ -23,23 +23,14 @@ namespace OrderApp.Api.Infrastructure
                 }
             );
 
-            config.Map<CustomerConfigurationException>((context, ex) =>
-                new ProblemDetails
-                {
-                    Title = "Customer Wrong Configuration",
-                    Status = StatusCodes.Status412PreconditionFailed,
-                    Detail = ex.Message
-                }
-            );
-
-            config.Map<ProductConfigurationException>((context, ex) =>
-                new ProblemDetails
-                {
-                    Title = "Product Wrong Configuration",
-                    Status = StatusCodes.Status412PreconditionFailed,
-                    Detail = ex.Message
-                }
-            );
+            //config.Map<CustomerConfigurationException>((context, ex) =>
+            //    new ProblemDetails
+            //    {
+            //        Title = "Customer Wrong Configuration",
+            //        Status = StatusCodes.Status412PreconditionFailed,
+            //        Detail = ex.Message
+            //    }
+            //);
 
             return config;
         }

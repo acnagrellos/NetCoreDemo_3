@@ -1,7 +1,9 @@
 ﻿using FluentAssertions;
+using FunctionalTest.Extensions;
 using FunctionalTest.Fixtures;
 using FunctionalTest.Fixtures.Resets;
 using FunctionalTest.Given;
+using OrderApp.Models.Customers;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -45,6 +47,26 @@ namespace FunctionalTest.Scenarios.Customers
                 .GetAsync(_url(customerId));
 
             response.EnsureSuccessStatusCode();
+        }
+
+        [Fact]
+        [ResetCustomersService]
+        public async Task return_ok_when_created_a_customer_with_the_same_props()
+        {
+            var name = "Pepe";
+            var surname = "Lopez";
+            var age = 23;
+            var email = "email@email.com";
+            var customerId = await _given.a_customer(name, surname, age, email);
+
+            var customer = await _host.Server
+                .CreateClient()
+                .GetJsonAsync<CustomerResponse>(_url(customerId));
+
+            customer?.Name.Should().Be(name);
+            customer?.Surname.Should().Be(surname);
+            customer?.Age.Should().Be(age);
+            customer?.Email.Should().Be(email);
         }
 
         [Fact]
