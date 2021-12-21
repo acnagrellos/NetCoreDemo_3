@@ -6,5 +6,8 @@
 
         public const string CustomerIdParam = "{customerId:int:min(0)}";
         public const string CustomersUri = "customers";
+
+        public const string ProductIdParam = "{productId:int:min(0)}";
+        public const string ProductsUri = "products";
     }
 }

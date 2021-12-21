@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OrderApp.Models;
+using OrderApp.Models.Customers;
 using OrderApp.Services.Contracts;
 using System.Net;
 
