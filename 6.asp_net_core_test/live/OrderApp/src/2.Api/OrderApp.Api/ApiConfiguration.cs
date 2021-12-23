@@ -13,7 +13,8 @@ namespace OrderApp.Api
     {
         public static void ConfigureServices(this IServiceCollection services) 
         {
-            services.AddSingleton<ICustomerService, CustomerMemoryService>()
+            services.AddSingleton<IProductsService, ProductsMemoryService>()
+                    .AddSingleton<ICustomerService, CustomerMemoryService>()
                     .ConfigureOptions<ProblemDetailsOptionsCustomSetup>()
                     .AddProblemDetails()
                     .AddControllers()

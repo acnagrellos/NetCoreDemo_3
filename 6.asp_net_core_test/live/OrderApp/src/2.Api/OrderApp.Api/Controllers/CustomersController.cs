@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OrderApp.Models;
 using OrderApp.Models.Customers;
 using OrderApp.Services.Contracts;
 using System.Net;
@@ -24,7 +23,7 @@ namespace OrderApp.Api.Controllers
             return Ok(clients);
         }
 
-        [HttpGet(ApiConstants.ProductIdParam, Name = nameof(CustomersController.Get))]
+        [HttpGet(ApiConstants.CustomerIdParam, Name = nameof(CustomersController.Get))]
         [ProducesResponseType(typeof(CustomerResponse), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<ActionResult> Get([FromRoute] int customerId)
@@ -39,7 +38,7 @@ namespace OrderApp.Api.Controllers
             return Ok(customer);
         }
 
-        [HttpPut(ApiConstants.ProductIdParam, Name = nameof(CustomersController.Put))]
+        [HttpPut(ApiConstants.CustomerIdParam, Name = nameof(CustomersController.Put))]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -58,7 +57,7 @@ namespace OrderApp.Api.Controllers
             return this.CreatedAtAction(nameof(CustomersController.Get), new { customerId = id }, id);
         }
 
-        [HttpDelete(ApiConstants.ProductIdParam, Name = nameof(CustomersController.Delete))]
+        [HttpDelete(ApiConstants.CustomerIdParam, Name = nameof(CustomersController.Delete))]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<ActionResult> Delete([FromRoute] int customerId)

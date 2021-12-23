@@ -14,13 +14,13 @@ namespace OrderApp.Domain
         public Product(int id, string name, string description, int price) 
         {
             this.Id = id;
-            this.OutOfCatalog = false;
             this.Update(name, description, price);
+            this.OutOfCatalog = false;
         }
         
         public void Update(string name, string description, int price) 
         {
-            if (string.IsNullOrEmpty(name) || name.Length > 12)
+            if (string.IsNullOrEmpty(name) || name.Length < 12)
             {
                 throw new ProductConfigurationException(nameof(name), name);
             }
